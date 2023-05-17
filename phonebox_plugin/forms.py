@@ -1,8 +1,6 @@
 from django import forms
-from utilities.forms import (
-    BootstrapMixin, DynamicModelMultipleChoiceField, DynamicModelChoiceField,
-    TagFilterField, BulkEditForm, CSVModelForm, CSVModelChoiceField
-)
+from utilities.forms import BootstrapMixin, BulkEditForm, CSVModelForm
+from utilities.forms.fields import DynamicModelMultipleChoiceField, DynamicModelChoiceField, TagFilterField, CSVModelChoiceField
 from tenancy.models import Tenant
 from dcim.models import Region, Site, Device, Interface
 from virtualization.models import VirtualMachine, VMInterface
