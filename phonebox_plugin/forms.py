@@ -5,13 +5,26 @@ from utilities.forms.fields import (
 from utilities.forms import (
     BootstrapMixin, BulkEditForm, CSVModelForm
 )
-from extras.forms import AddRemoveTagsForm
 from tenancy.models import Tenant
 from dcim.models import Region
 from circuits.models import Provider
 from extras.models import Tag
 from .models import Number
 
+class AddRemoveTagsForm(forms.Form):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Add add/remove tags fields
+        self.fields['add_tags'] = DynamicModelMultipleChoiceField(
+            queryset=Tag.objects.all(),
+            required=False
+        )
+        self.fields['remove_tags'] = DynamicModelMultipleChoiceField(
+            queryset=Tag.objects.all(),
+            required=False
+        )
 
 class NumberFilterForm(BootstrapMixin, forms.Form):
 
