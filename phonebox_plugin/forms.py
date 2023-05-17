@@ -1,7 +1,9 @@
 from django import forms
+from utilities.forms.fields import (
+    DynamicModelMultipleChoiceField, DynamicModelChoiceField, TagFilterField, CSVModelChoiceField
+)
 from utilities.forms import (
-    BootstrapMixin, DynamicModelMultipleChoiceField, DynamicModelChoiceField,
-    TagFilterField, BulkEditForm, CSVModelForm, CSVModelChoiceField
+    BootstrapMixin, BulkEditForm, CSVModelForm
 )
 from extras.forms import AddRemoveTagsForm
 from tenancy.models import Tenant
