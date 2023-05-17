@@ -25,6 +25,7 @@ class AddRemoveTagsForm(forms.Form):
             queryset=Tag.objects.all(),
             required=False
         )
+        
 
 class NumberFilterForm(BootstrapMixin, forms.Form):
 
